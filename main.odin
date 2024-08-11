@@ -33,6 +33,9 @@ handleKey :: proc(editor: ^Editor, key: rl.KeyboardKey) {
 		case .ENTER:
 			editor.buffer[editor.offset] = '\n'
 			editor.offset += 1
+		case .TAB:
+			editor.buffer[editor.offset] = '\t'
+			editor.offset += 1
 		case .A ..= .Z:
 			if shift {
 				editor.buffer[editor.offset] = auto_cast key
